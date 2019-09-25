@@ -1,0 +1,31 @@
+.img-container {
+    position: relative;
+    /* width: 400px; */
+    max-width: 100%;
+    /* margin: 0 25px 25px 0; */
+    display: block;
+    /* vertical-align: top; */
+    margin: auto;
+  }
+    
+.overlay {
+      display: inline-block;
+      color: white;
+      background-color: rgba(44, 143, 19, 0.8);
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 10%;
+      position: absolute;
+      /* bottom: 20px;
+      left: 20px; */
+
+  /* border: solid 1px #ccc;  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12); */
+  }
