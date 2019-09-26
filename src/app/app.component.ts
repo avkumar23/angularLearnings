@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragEnd} from '@angular/cdk/drag-drop';  
+import { CdkDragEnd} from '@angular/cdk/drag-drop';  
+import { dragPositionService } from './dragPosition.service'
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,13 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragEnd} from '@ang
 })
 export class AppComponent {
   //title = 'angular8firstapp';
-
-  initialPosition = { x: this.getXinitPos(), y: this.getYinitPos() };
+  initialPosition: { x: any; y: any; };
   position = { ...this.initialPosition };
-  offset = { x: 0, y: 0 };
+  offset: { x: string | number; y: string | number; };
+
+  constructor(service : dragPositionService){ //dependency injection
+    this.initialPosition = { x: service.getXinitPos(), y: service.getYinitPos() };
+  } 
 
   dragEnd(event: CdkDragEnd) {
 
@@ -26,17 +30,6 @@ export class AppComponent {
     console.log(this.position, this.initialPosition, this.offset);
   }
 
-  getXinitPos(){
-    return 0;
-  }
-
-  getYinitPos(){
-    return 0;
-  }
-
-  savePositionToDB() {      
-    //post posotion data to DB.  
-  }
 
 
 }

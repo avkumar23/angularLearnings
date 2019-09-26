@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { dragPositionService } from './dragPosition.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AppRoutingModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [dragPositionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

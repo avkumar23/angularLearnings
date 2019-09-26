@@ -544,8 +544,10 @@
 </div>
 
 <div class="img-container" cdkDrop>
+
   <img src="./assets/img/spotwelding.jpg">
-  <!-- <div cdkDrag (cdkDragEnded)="dragEnd($event)" class="overlay">2117</div> -->
+  <!-- <div cdkDrag (cdkDragEnded)="dragEnd($event)" class="overlay">2117</div> -->  
+  <!-- <span cdkDrag class="overlay">2117</span> -->
   <div 
   #overlay
   class="overlay"
@@ -553,6 +555,6 @@
   (cdkDragEnded)="dragEnd($event)"
   [style.top.px]="initialPosition.y"
   [style.left.px]="initialPosition.x">2117</div>
-  
-  <!-- <span cdkDrag class="overlay">2117</span> -->
+
+  <!-- Example of property binding, [style.top.px]="initialPosition.y" -->
 </div>
