@@ -9,6 +9,9 @@ import { dragPositionService } from './dragPosition.service'
 })
 export class AppComponent {
   //title = 'angular8firstapp';
+  isActive = false  ;
+  colSpan = 2;
+
   initialPosition: { x: any; y: any; };
   position = { ...this.initialPosition };
   offset: { x: string | number; y: string | number; };
@@ -30,6 +33,14 @@ export class AppComponent {
     console.log(this.position, this.initialPosition, this.offset);
   }
 
+  // This is for an example of Event Bubbling.
+  onDivClicked(){
+    console.log("Div was clicked");
+  }
 
+  onToggle($event : any){
+    $event.stopPropagation();
+    console.log("toggle on/off", $event);
+  }
 
 }

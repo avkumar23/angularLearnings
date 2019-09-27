@@ -555,6 +555,29 @@
   (cdkDragEnded)="dragEnd($event)"
   [style.top.px]="initialPosition.y"
   [style.left.px]="initialPosition.x">2117</div>
-
-  <!-- Example of property binding, [style.top.px]="initialPosition.y" -->
+  <!-- Example of property binding, [style.top.px]="initialPosition.y", actually this bind property of a DOM object not the attribute of the HTML -->
 </div>
+
+<div>
+  <table>
+    <tr>
+      <td [attr.colspan] = "colSpan"></td>
+    </tr>
+  </table>
+  <!-- Example of attribute binding, [attr.colspan] = "colSpan", by this we make colspan as an HTML attribute, there is no such element in DOM object as well.
+        It is also possible that DOM object has a property like, textContent, but its relevent attribute is not present in HTML attribute.
+        In most of the cases, there is a direct one to one mapping between, HTML Attribute <====> DOM Object property.
+  -->
+  <button class = "btn btn-primary" [class.active]="isActive">Configure</button>
+  <!-- Example of class binding, [class]="isActive", based upon isActive flag this class will be added or removed -->
+  <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
+  <!-- Example of style binding, [style.backgroundColor]="isActive ? 'blue' : 'white'" -->
+</div>
+
+<div class="custom-control custom-switch" (click) = "onDivClicked()">
+    <input type="checkbox" class="custom-control-input" id="customSwitches" (click) = "onToggle($event)">
+    <label class="custom-control-label" for="customSwitches">Toggle this switch element</label>
+</div>
+<!-- Example of Event binding, (click) = "onToggle()", here $event is a part of standard DOM event object, like venila javaScript and jQuery.
+     Example of Event bubbling, (click) = "onDivClicked(), and to stop this, need to call $event.stopPropagation() inside onToggle().
+-->
