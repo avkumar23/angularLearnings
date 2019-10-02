@@ -37,10 +37,26 @@ export class AppComponent {
   onDivClicked(){
     console.log("Div was clicked");
   }
-
   onToggle($event : any){
     $event.stopPropagation();
     console.log("toggle on/off", $event);
+  }
+
+  // Example of event filtering.
+  onKeyUp1(){
+    console.log("ENTER button is pressed");
+  }
+  onKeyUp2($event: any){
+    console.log("The value enteresd is : ", $event.target.value);
+  }
+  onKeyUp3(email: any){
+    console.log("The value enteresd is : ", email);
+  }
+
+  //Example of two-way binding
+  email = "me@example.com";
+  onKeyUp4(){
+    console.log("The value enteresd is : ", this.email);
   }
 
 }

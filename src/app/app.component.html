@@ -577,7 +577,17 @@
 <div class="custom-control custom-switch" (click) = "onDivClicked()">
     <input type="checkbox" class="custom-control-input" id="customSwitches" (click) = "onToggle($event)">
     <label class="custom-control-label" for="customSwitches">Toggle this switch element</label>
+
+    <!-- <li><input (keyup.enter) = "onKeyUp1()"/></li> -->
+    <!-- <li><input (keyup.enter) = "onKeyUp2($event)"/></li> -->
+    <!-- <li><input #email (keyup.enter) = "onKeyUp3(email.value)"/></li>  -->
+    <!-- <li>Two-way Binding example</li> -->
+    <!-- <li><input [value]= "email" (keyup.enter) = "email = $event.target.value; onKeyUp4()"/></li> -->
+    <li><input [(ngModel)]= "email" (keyup.enter) = "onKeyUp4()"/></li>
 </div>
 <!-- Example of Event binding, (click) = "onToggle()", here $event is a part of standard DOM event object, like venila javaScript and jQuery.
      Example of Event bubbling, (click) = "onDivClicked(), and to stop this, need to call $event.stopPropagation() inside onToggle().
+     Example of Event filtering, (keyup.enter) = "onKeyUp()".
+     Example of input value passed by the user taken with $event, onKeyUp2($event), entered value can be traced by $event.target.value.
+     Example of input value passed by the user taken with template variable(#email).
 -->
