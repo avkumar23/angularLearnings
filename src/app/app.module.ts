@@ -1,20 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { dragPositionService } from './dragPosition.service';
+import { InputUserDataFormComponent } from './pages/input-user-data-form/input-user-data-form.component';
+import { DisplayUserDataComponent } from './pages/display-user-data/display-user-data.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InputUserDataFormComponent,
+    DisplayUserDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [dragPositionService],
   bootstrap: [AppComponent]
