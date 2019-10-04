@@ -1,0 +1,19 @@
+Directive and component instances have a lifecycle as Angular creates, updates, and destroys them. Developers can tap into key moments in that lifecycle by implementing one or more of the lifecycle hook interfaces in the Angular core library.
+Lifecycle Hooks - Angular
+https://angular.io › guide › lifecycle-hooks
+
+you should use constructor() to setup Dependency Injection and not much else. ngOnInit() is better place to "start" - it's where/when components' bindings are resolved.
+
+
+Basically, you can declare a function to be async, which allows you to use the await keyword in the body of this function. The await keyword can be put in front of an expression that evaluates to a promise. The await keyword pauses the execution of the async function until the promise is resolved. When this happens, the entire await expression evaluates to the result value of the promise, and then the execution of the async function resumes.
+Furthermore, the async function itself returns a promise as well that is resolved when the execution of the function body completes.
+function asyncTask(i) {
+    return new Promise(resolve => resolve(i + 1));
+}
+async function runAsyncTasks() {
+    const res1 = await asyncTask(0);
+    const res2 = await asyncTask(res1);
+    const res3 = await asyncTask(res2);
+    return "Everything done"
+}
+runAsyncTasks().then(result => console.log(result));

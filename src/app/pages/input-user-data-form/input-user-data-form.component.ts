@@ -19,7 +19,8 @@ export class InputUserDataFormComponent implements OnInit {
 
   invalidFirstName()
   {
-  	return (this.submitted && this.userForm.controls.first_name.errors != null);
+    // return (this.submitted &&(this.serviceErrors.first_name !=null || this.userForm.controls.first_name.errors != null));
+    return (this.submitted && this.userForm.controls.first_name.errors != null);
   }
 
   invalidLastName()
