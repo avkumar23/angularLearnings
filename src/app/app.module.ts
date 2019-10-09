@@ -7,6 +7,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { dragPositionService } from './dragPosition.service';
 import { InputUserDataFormComponent } from './pages/input-user-data-form/input-user-data-form.component';
 import { DisplayUserDataComponent } from './pages/display-user-data/display-user-data.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { DisplayUserDataComponent } from './pages/display-user-data/display-user
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     DragDropModule,
     FormsModule,
