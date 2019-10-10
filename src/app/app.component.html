@@ -568,7 +568,7 @@
         It is also possible that DOM object has a property like, textContent, but its relevent attribute is not present in HTML attribute.
         In most of the cases, there is a direct one to one mapping between, HTML Attribute <====> DOM Object property.
   -->
-  <button class = "btn btn-primary" [class.active]="isActive">Configure</button>
+  <button class = "btn btn-primary" [class.active]="isActive" (click) = "onDivClicked()">Configure</button>
   <!-- Example of class binding, [class]="isActive", based upon isActive flag this class will be added or removed -->
   <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
   <!-- Example of style binding, [style.backgroundColor]="isActive ? 'blue' : 'white'" -->
